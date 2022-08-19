@@ -29,7 +29,6 @@ const protect = async (req, res, next) => {
     }
   }
 };
-
 const generateToken = (payload) => {
   const verifyOpts = {
     expiresIn: "1h"

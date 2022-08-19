@@ -24,7 +24,7 @@ const create = ({id, email, password, fullname}) => {
 }
 const getUsers = (idUser) => {
   return new Promise((resolve, reject) => {
-    pool.query('SELECT * FROM users where id <> $1', [idUser], (error, result) => {
+    pool.query('SELECT * FROM users where id = $1', [idUser], (error, result) => {
       if (!error) {
         resolve(result)
       } else {
