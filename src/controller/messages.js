@@ -7,7 +7,6 @@ const getMessage=async(req, res, next)=>{
     const receiver_id = req.params.receiver_id
     const sender_id =req.decoded.id
     const {rows} = await messagesModel.getMessage(sender_id, receiver_id)
-    console.log("rows =>",rows)
     const data = rows.map((item)=>{
         const datas ={
             chatid: item.id,
@@ -16,7 +15,6 @@ const getMessage=async(req, res, next)=>{
             receiver_id: item.receiver_id,
             sender_id: item.sender_id
         }
-        console.log("datas =>",datas)
         return datas
         
     })
