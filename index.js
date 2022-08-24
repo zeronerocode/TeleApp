@@ -17,7 +17,7 @@ app.use(express.urlencoded({ extended: false }));
 app.use(
   cors({
     //   credentials: true,
-    origin: "http://localhost:3000",
+    origin: "https://chat-react-socketio-seven.vercel.app/",
     methods: "GET,HEAD,PUT,PATCH,POST,DELETE",
     preflightContinue: true,
     optionsSuccessStatus: 204,
@@ -48,7 +48,7 @@ const PORT = process.env.PORT || 5000;
 // app.use('/v1', route)
 const io = new Server(httpServer, {
   cors: {
-    origin: "http://localhost:3000",
+    origin: "https://chat-react-socketio-seven.vercel.app/",
     methods: "GET,HEAD,PUT,PATCH,POST,DELETE",
     preflightContinue: true,
     optionsSuccessStatus: 204,
